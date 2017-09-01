@@ -121,4 +121,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+MEDIA_URL = '/TestHelper/'
+MEDIA_ROOT = os.path.join(BASE_DIR)
+
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'answers/templates'),)
+
+
+from django.contrib import admin
+admin.site.site_header = 'TestHelper'
+admin.site.site_title = 'TestHelper'
