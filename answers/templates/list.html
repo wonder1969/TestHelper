@@ -16,11 +16,29 @@
   </head>
 
   <body>
+
     <div class="container">
+        <br/>
+        <h1>TestHelper</h1>
 
-        <h1>GHHHHHH</h1>
+        {% if user.is_authenticated %}
+            <p>Привет, {{ user.username }}</p>
+            <a href="/admin/">Админка</a>
+            <br/>
+        {% else %}
+            <a href="#">Авторизируйся</a>
+        {% endif %}
 
-    </div> <!-- /container -->
+
+        <br/>
+          <div class="list-group">
+              {% for data in groups %}
+                <a href="#" class="list-group-item">{{ data.group_name|safe }}</a>
+              {% endfor %}
+          </div>
+      </div>
+
+    </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript

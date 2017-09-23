@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from answers.views import list
+from answers.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', list),
+    url(r'^group/(?P<group_id>[0-9]+)', answers), #просмотр списка вопросов определенной группы
+    url(r'^group/question_id=(?P<question_id>[0-9]+)', question_id), #просмотр списка вопросов определенной группы
+    url(r'^', list), #список групп вопросов
 ]
