@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^group/(?P<group_id>[0-9]+)', answers), #просмотр списка вопросов определенной группы
     url(r'^group/question_id=(?P<question_id>[0-9]+)', question_id), #просмотр списка вопросов определенной группы
-    url(r'^', list), #список групп вопросов
+    url(r'^', list, name='post_list'), #список групп вопросов
 ]

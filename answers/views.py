@@ -4,13 +4,13 @@ from .models import group, question
 
 #общий список групп вопросов
 def list(request):
-    groups = group.objects.filter()
+    groups = group.objects.filter().order_by('-id')
     return render(request, "list.html", {'groups': groups})
 
 
 #список вопросов определенной группы
-def answers(request):
-    questions = question.objects.filter()
+def answers(request, group_id = 1):
+    questions = question.objects.filter(question_group=group_id)
     return render(request, "answer.html", {'questions': questions})
 
 

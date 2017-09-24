@@ -26,14 +26,14 @@
             <a href="/admin/">Админка</a>
             <br/>
         {% else %}
-            <a href="#">Авторизируйся</a>
+            <a href="/admin/">Авторизируйся</a>
         {% endif %}
 
 
         <br/>
           <div class="list-group">
               {% for data in groups %}
-                <a href="#" class="list-group-item">{{ data.group_name|safe }}</a>
+                <a href="/group/{{ data.id }}" class="list-group-item">{{ data.group_name|safe }}</a>
               {% endfor %}
           </div>
       </div>

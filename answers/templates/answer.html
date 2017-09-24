@@ -28,11 +28,11 @@
             <br/>
         {% endif %}
 
-
+        <a href="/">Назад</a><br/>
         <br/>
           <div class="list-group">
-              {% for data in groups %}
-                <a href="#" class="list-group-item">{{ data.group_name|safe }}</a>
+              {% for data in questions %}
+                <a href="/group/question_id={{ data.id }}" class="list-group-item">{{ data.question_name|safe }}</a>
               {% endfor %}
           </div>
       </div>
