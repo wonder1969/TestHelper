@@ -23,19 +23,21 @@
 
         {% if user.is_authenticated %}
             <p>Привет, {{ user.username }}</p>
-            <a href="/admin/">Админка</a>
+            <a href="/admin/"><button type="button" class="btn btn-secondary">Админка</button></a>
             <br/>
         {% else %}
-            <a href="/admin/">Авторизируйся</a>
+            <a href="/admin/"><button type="button" class="btn btn-danger">Авторизируйся</button></a>
         {% endif %}
 
 
         <br/>
+        {% if user.is_authenticated %}
           <div class="list-group">
               {% for data in groups %}
                 <a href="/group/{{ data.id }}" class="list-group-item">{{ data.group_name|safe }}</a>
               {% endfor %}
           </div>
+        {% endif %}
       </div>
 
     </div><!-- /.container -->

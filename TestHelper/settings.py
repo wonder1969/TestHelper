@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bb(#8svh(=s&bbt3j-_qa(26)!srnt+^mq++kwm0lr4eglza-n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'klimov.org',
+    '127.0.0.1',
+]
 
 
 # Application definition

@@ -23,7 +23,7 @@
 
         {% if user.is_authenticated %}
             <p>Привет, {{ user.username }}</p>
-            <a href="/">Назад</a><br/>
+            <a href="/group/{{ ques.question_group.id }}"><button type="button" class="btn btn-primary">Назад</button></a><br/>
 
             <br/>
             <div class="list-group">
@@ -31,10 +31,8 @@
                 <a class="list-group-item">Вопрос: {{ ques.question_name|safe }}</a>
                 <a class="list-group-item">{{ ques.question_answer|safe }}</a>
             </div>
-        {% else %}
-            <a href="#">Авторизируйся</a>
-            <a href="/">Назад</a><br/>
             <br/>
+            <a href="/admin/answers/question/{{ ques.id }}/change/"><button type="button" class="btn btn-warning">Редактировать</button></a><br/>
         {% endif %}
 
       </div>
