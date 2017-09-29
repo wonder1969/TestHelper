@@ -28,13 +28,15 @@
             <br/>
         {% endif %}
 
-        <a href="/">Назад</a><br/>
+        <a href="/"><button type="button" class="btn btn-primary">Назад</button></a><br/>
         <br/>
+        {% if user.is_authenticated %}
           <div class="list-group">
               {% for data in questions %}
-                <a href="/group/question_id={{ data.id }}" class="list-group-item">{{ data.question_name|safe }}</a>
+                <a href="/group/question_id={{ data.id }}" class="list-group-item">{{ data.question_number }}.{{ data.question_name|safe }}</a>
               {% endfor %}
           </div>
+        {% endif %}
       </div>
 
     </div><!-- /.container -->

@@ -10,7 +10,7 @@ def list(request):
 
 #список вопросов определенной группы
 def answers(request, group_id = 1):
-    questions = question.objects.filter(question_group=group_id)
+    questions = question.objects.filter(question_group=group_id).order_by('question_number')
     return render(request, "answer.html", {'questions': questions})
 
 
