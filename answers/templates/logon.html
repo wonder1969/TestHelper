@@ -20,24 +20,18 @@
     <div class="container">
         <br/>
         <h1>TestHelper</h1>
+            <div class="list-group">
+                <a class="list-group-item">
 
-        {% if user.is_authenticated and user.is_staff %}
-            <p>Привет, {{ user.username }}   <a href="/logout/">Выход</a></p>
-        {% else %}
-            <br/>
-            <p>Нет доступа, пни админа :)</a>
-            <br/>
-        {% endif %}
+                    <form action="/logon/" method="post">
+                        <h2 class="form-signin-heading">Регистрация:</h2>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Зарегестрироваться">
+                    </form>
 
-        <a href="/"><button type="button" class="btn btn-primary">Назад</button></a><br/>
-        <br/>
-        {% if user.is_authenticated and user.is_staff%}
-          <div class="list-group">
-              {% for data in questions %}
-                <a href="/group/question_id={{ data.id }}" class="list-group-item">{{ data.question_number }}.{{ data.question_name|safe }}</a>
-              {% endfor %}
-          </div>
-        {% endif %}
+                </a>
+            </div>
       </div>
 
     </div><!-- /.container -->

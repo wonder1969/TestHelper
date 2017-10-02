@@ -21,8 +21,8 @@
         <br/>
         <h1>TestHelper</h1>
 
-        {% if user.is_authenticated %}
-            <p>Привет, {{ user.username }}</p>
+        {% if user.is_authenticated and user.is_staff %}
+            <p>Привет, {{ user.username }}   <a href="/logout/">Выход</a></p>
             <a href="/group/{{ ques.question_group.id }}"><button type="button" class="btn btn-primary">Назад</button></a><br/>
 
             <br/>
