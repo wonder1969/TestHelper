@@ -30,15 +30,22 @@
             <a href="/logon/"><button type="button" class="btn btn-danger">Регистрация</button></a>
         {% endif %}
 
-
         <br/>
-        {% if user.is_authenticated %}
+
+        {% if user.is_authenticated and user.is_staff%}
           <div class="list-group">
               {% for data in groups %}
                 <a href="/group/{{ data.id }}" class="list-group-item">{{ data.group_name|safe }}</a>
               {% endfor %}
           </div>
         {% endif %}
+
+        {% if user.is_authenticated and not user.is_staff %}
+          <div class="list-group">
+                <a  class="list-group-item">Пни админа</a>
+          </div>
+        {% endif %}
+
       </div>
 
     </div><!-- /.container -->
