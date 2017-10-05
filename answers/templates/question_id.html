@@ -27,8 +27,8 @@
 
             <br/>
             <div class="list-group">
-                <a class="list-group-item">{{ ques.question_name|safe }}</a>
-                <a class="list-group-item">{{ ques.question_answer|safe }}</a>
+                <a class="list-group-item">{{ ques.question_name|safe |linebreaksbr }}</a>
+                <a class="list-group-item">{{ ques.question_answer|safe |linebreaksbr }}</a>
             </div>
             <br/>
             <a href="/admin/answers/question/{{ ques.id }}/change/"><button type="button" class="btn btn-warning">Редактировать</button></a><br/>
