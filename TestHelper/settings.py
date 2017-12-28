@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'klimov.org',
     '127.0.0.1',
+    'localhost',
 ]
 
 
